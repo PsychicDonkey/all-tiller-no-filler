@@ -1,5 +1,6 @@
  SELECT 
- *
+ product as product
+ , cluster as product_group
   ,CASE 
     WHEN cluster IN ('Deposit','Discount') THEN 'Deposit & Discount'
     WHEN cluster IN ('1', 'Uncategorised') THEN 'Uncategorised'
@@ -17,6 +18,13 @@
     WHEN cluster IN ('Indian Food','Curry') THEN 'Indian Food'
     WHEN cluster IN ('Bakery','Tarts','Sandwiches') THEN 'Pastries and Bread'
     WHEN cluster IN ('Dessert','Desserts','Ice-Cream','Cake','Fruit') THEN 'Desserts and Sweets'
-  END AS category
+  END AS product_category
+   ,CASE 
+    WHEN cluster IN ('Deposit','Discount') THEN 'Deposit & Discount'
+    WHEN cluster IN ('1', 'Uncategorised','General Foodstuffs') THEN 'Other Foodstuffs'
+    WHEN cluster IN ('Kitchenware','Flowers','Plants','Tobacco','Cookware','Entertainment') THEN 'Non-Food Items'
+    WHEN cluster IN ('Wine','Beer','Cocktails','Cocktail','Spirits','Cider','Ciders','Whiskey','Sparkling Wine','Liquor','Coffee','Tea','Hot Drinks','Beverages','Mineral Water','Fruit Juice','Soft Drinks','Coca-Cola') THEN 'Beverages'
+    WHEN cluster IN ('Dessert','Desserts','Ice-Cream','Cake','Fruit','Bakery','Tarts','Sandwiches','Indian Food','Curry','Pasta','Ravioli','Italian Food','Tapas','Cheese','Foie Gras','Goat Cheese','Soup','Starter/Main/Dessert Combo','Tasting Menus','Boards','Set Menu','Single Meals','Dish of the Day','Take Aways','Breakfast Food','Childrens Menu','Chicken','Meat','Seafood','Burgers','Egg Dishes','Vegetables','Truffle Dishes','Salad') THEN 'Food Items'
+  END AS product_class
  FROM `aqueous-tesla-423708-b1.tiller.ML_name_enriched`
  
