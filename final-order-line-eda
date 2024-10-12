@@ -1,0 +1,25 @@
+-- EDA on ORDER LINE
+
+-- check # of rows on specific order
+SELECT
+*
+FROM aqueous-tesla-423708-b1.tiller.order_line as order_line
+
+WHERE order_line.id_order =15967970;
+
+-- check sum revenue on specific order
+SELECT
+SUM(m_total_price_inc_vat)
+FROM aqueous-tesla-423708-b1.tiller.order_line as order_line
+
+WHERE order_line.id_order =15967970;
+
+-- check a date on a specific store_id
+
+SELECT
+*
+FROM aqueous-tesla-423708-b1.tiller.order_line as order_line
+LEFT JOIN aqueous-tesla-423708-b1.tiller.order_data as order_data
+  ON order_line.id_order = order_data.id_order
+WHERE order_data.id_store =351 and DATE(order_line.date_created) = "2015-10-22"
+;
