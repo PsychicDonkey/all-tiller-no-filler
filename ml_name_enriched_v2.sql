@@ -12,7 +12,7 @@
     WHEN cluster IN ('Single Meals','Dish of the Day','Take Aways','Breakfast Food','Childrens Menu') THEN 'Single Meals'
     WHEN cluster IN ('Chicken','Meat','Seafood','Burgers','Egg Dishes') THEN 'Meat Dishes'
     WHEN cluster IN ('Vegetables','Truffle Dishes','Salad' ) THEN 'Vegetarian Dishes'
-    WHEN cluster IN ('Tapas','Cheese','Foie Gras','Goat Cheese') THEN 'Starter & Tapas'
+    WHEN cluster IN ('Tapas','Cheese','Foie Gras','Goat Cheese','Soup') THEN 'Starter & Tapas'
     WHEN cluster IN ('Pasta','Ravioli','Italian Food') THEN 'Italian Food'
     WHEN cluster IN ('Indian Food','Curry') THEN 'Indian Food'
     WHEN cluster IN ('Bakery','Tarts','Sandwiches') THEN 'Pastries and Bread'
