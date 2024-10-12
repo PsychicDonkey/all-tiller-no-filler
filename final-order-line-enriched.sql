@@ -10,8 +10,8 @@ SELECT
   ,order_line.m_total_price_inc_vat
   ,order_line.m_tax_percent
   ,order_line.m_discount_amount
-  ,order_line.dim_type
-  ,order_line.dim_category
+  --,order_line.dim_type
+  --,order_line.dim_category
   ,order_line.dim_name
   ,order_line.dim_status
   ,order_line.dim_feature_type
@@ -23,7 +23,7 @@ SELECT
   ,order_data.id_waiter                   -- orders: waiter #
   ,order_data.id_table                    -- orders: table
   ,order_data.dim_status as order_status
-  ,ml_name.product as product_name
+  ,INITCAP(ml_name.product) as product_name
   ,ml_name.product_group as product_group
   ,ml_name.product_category as product_category
   ,ml_name.product_class as product_class
