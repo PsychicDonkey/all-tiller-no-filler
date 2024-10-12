@@ -42,3 +42,5 @@ LEFT JOIN aqueous-tesla-423708-b1.tiller.order_data as order_data
   ON order_line.id_order = order_data.id_order
 LEFT JOIN aqueous-tesla-423708-b1.tiller.ml_name_enriched_v2 as ml_name
   ON order_line.dim_name_translated = ml_name.product
+
+WHERE ml_name.product_class != 'Deposit & Discount'
