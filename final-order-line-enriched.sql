@@ -29,13 +29,13 @@ SELECT
   ,ml_name.product_class as product_class
   ,EXTRACT(TIME FROM order_line.date_created) as line_order_time
   ,CASE 
-    WHEN EXTRACT(DAYOFWEEK FROM order_line.date_created) = 1 THEN 'Sunday'
-    WHEN EXTRACT(DAYOFWEEK FROM order_line.date_created) = 2 THEN 'Monday'
-    WHEN EXTRACT(DAYOFWEEK FROM order_line.date_created) = 3 THEN 'Tuesday'
-    WHEN EXTRACT(DAYOFWEEK FROM order_line.date_created) = 4 THEN 'Wednesday'
-    WHEN EXTRACT(DAYOFWEEK FROM order_line.date_created) = 5 THEN 'Thursday'
-    WHEN EXTRACT(DAYOFWEEK FROM order_line.date_created) = 6 THEN 'Friday'
-    WHEN EXTRACT(DAYOFWEEK FROM order_line.date_created) = 7 THEN 'Saturday'
+    WHEN EXTRACT(DAYOFWEEK FROM order_line.date_created) = 1 THEN '1. Sunday'
+    WHEN EXTRACT(DAYOFWEEK FROM order_line.date_created) = 2 THEN '2. Monday'
+    WHEN EXTRACT(DAYOFWEEK FROM order_line.date_created) = 3 THEN '3. Tuesday'
+    WHEN EXTRACT(DAYOFWEEK FROM order_line.date_created) = 4 THEN '4. Wednesday'
+    WHEN EXTRACT(DAYOFWEEK FROM order_line.date_created) = 5 THEN '5. Thursday'
+    WHEN EXTRACT(DAYOFWEEK FROM order_line.date_created) = 6 THEN '6. Friday'
+    WHEN EXTRACT(DAYOFWEEK FROM order_line.date_created) = 7 THEN '7. Saturday'
   END AS day_of_week
 FROM aqueous-tesla-423708-b1.tiller.order_line as order_line
 LEFT JOIN aqueous-tesla-423708-b1.tiller.order_data as order_data
