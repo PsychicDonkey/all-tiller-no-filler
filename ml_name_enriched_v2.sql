@@ -16,7 +16,7 @@
     WHEN cluster IN ('Pasta','Ravioli','Italian Food') THEN 'Italian Food'
     WHEN cluster IN ('Indian Food','Curry') THEN 'Indian Food'
     WHEN cluster IN ('Bakery','Tarts','Sandwiches') THEN 'Pastries and Bread'
-    WHEN cluster IN ('Dessert','Desserts','Ice-Cream','Cake') THEN 'Desserts and Sweets'
+    WHEN cluster IN ('Dessert','Desserts','Ice-Cream','Cake','Fruit') THEN 'Desserts and Sweets'
   END AS category
  FROM `aqueous-tesla-423708-b1.tiller.ML_name_enriched`
  
